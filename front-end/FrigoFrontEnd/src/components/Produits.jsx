@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 export const Produits = () => {
   const [mesproduits, setMesproduits] = useState([]);
+  // const [mesrecettes, setMesrecettes] = useState([]);
 
   async function getProduits() {
   try {
@@ -21,11 +22,21 @@ useEffect(() => {
 },[])
 
   return (
-<div>Produits 
-  <div>{mesproduits.map((monproduit)=>(
-    <p key={monproduit.id}>{monproduit.nom}</p>
-    
-  ))}</div>
-</div>
-  )
+    <div>
+      <h2>Produits</h2>
+      <div>
+        {mesproduits.map((monproduit) => (
+          <p key={monproduit.id}>{monproduit.nom}</p>
+        ))}
+      </div>
+
+      {/* <h2>Recettes</h2>
+      <div>
+        {mesrecettes.map((marecette) => (
+          <p key={marecette.id}>{marecette.nom} - {marecette.instructions} </p>
+        ))}
+      </div> */}
+    </div>
+  );
+
 };
